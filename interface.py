@@ -37,7 +37,7 @@ for index, row in manager_ticker_data.iloc[start_idx:end_idx].iterrows():
         current_tickers = [item for sublist in parsed_data_tickers for item in sublist]
     st.write("Current tickers:", current_tickers)
     parsed_data_prospectus_tickers = ast.literal_eval(row['prospectus_tickers'])
-    if (isinstance(row['prospectus_tickers'], list) and len(parsed_data_prospectus_tickers) > 0 and isinstance(parsed_data_prospectus_tickers[0], tuple)):
+    if isinstance(parsed_data_prospectus_tickers, list) and len(parsed_data_prospectus_tickers) > 0 and isinstance(parsed_data_prospectus_tickers[0], tuple):
         prospectus_tickers = parsed_data_prospectus_tickers
     else:
         prospectus_tickers = [item for sublist in parsed_data_prospectus_tickers for item in sublist]
